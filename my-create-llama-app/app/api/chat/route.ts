@@ -26,6 +26,7 @@ export async function POST(request: NextRequest) {
       model: "gpt-3.5-turbo",
     });
 
+   
     const chatEngine = await createChatEngine(llm);
 
     const response = await chatEngine.chat(lastMessage.content, messages, true);
