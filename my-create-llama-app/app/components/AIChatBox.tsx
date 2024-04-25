@@ -79,7 +79,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
     </p>
     <p>
       그럼, AI 구민이 당신의 질문에 대해 모두 답변 할 것입니다!<br/>
-      만약 어떤 질문을 해야할 지 모르겠다면 <br/> "질문 추천해줘" 라고 물어보세요!
+      만약 어떤 질문을 해야할 지 모르겠다면 <br/> 질문 추천해줘 라고 물어보세요!
     </p>
     <p className="text-sm text-muted-foreground">
       권구민 지원자에 대한 자세한 이력서 및 포트폴리오를 확인하고 싶다면?{" "}
