@@ -30,7 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ imgUrl, title,subtitle, descr
    
           <div className=" text-center">
             AI 구민에게<br />
-            "{displayTitle}"
+            {displayTitle}
             프로젝트를<br />
             물어보세요!
           </div>
