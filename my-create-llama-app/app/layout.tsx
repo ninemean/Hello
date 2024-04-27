@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 
  twitter: {
-  title:  "%s | 안녕하세요! 권구민입니다 👋",
+  title:  "안녕하세요! 권구민입니다 👋",
   description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
   images: {
     url: "https://i.imgur.com/L3S6CNR.png",
