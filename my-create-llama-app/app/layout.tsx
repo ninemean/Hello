@@ -1,20 +1,24 @@
-import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { ThemeProvider } from "./components/ThemeProvider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import Footer from "./components/Footer";
+import higoomin from "../assets/higoomin.png"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  // metadataBase: new URL('www.aigoomin.shop'),
+  metadataBase: new URL('https://www.aigoomin.shop'),
   title: {
     template: "%s | 안녕하세요! 권구민입니다 👋",
     default: "안녕하세요! 권구민입니다 👋",
   },
-  description: "AI구민에게 뭐든지 질문해보세요!",
+  description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
+  openGraph: {
+    images: '../assets/higoomin.png',
+  },
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,10 +28,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className} >
         <ThemeProvider attribute="class">
- <Navbar />
-         
-          <main  className="flex justify-center items-center h-screen">
-            <div  className="max-w-3xl px-3 ">{children}</div>
+          <Navbar />
+          <main className="flex justify-center items-center h-screen">
+            <div className="w-[48.125rem] h-full">{children}</div>
           </main>
         </ThemeProvider>
       </body>

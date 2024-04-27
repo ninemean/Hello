@@ -1,30 +1,118 @@
+"use client";
 import me from "@/assets/IMG_5962.jpg";
 import { H1 } from "./components/H1";
 import { H2 } from "./components/H2";
 import { Bot } from "lucide-react";
-import { Metadata } from "next";
+import React, { useTransition, useState, useRef } from "react";
 import Image from "next/image";
-import Navbar from "./components/Navbar"
-
-export const metadata: Metadata = {
-  title: "안녕하세요! 권구민입니다 👋",
-};
+import { TypeAnimation } from 'react-type-animation';
+import ProjectCard from "./components/ProjectCard";
+import ProjectTag from "./components/ProjectTag";
+import { motion, useInView } from "framer-motion";
 
 export default function Home() {
+
+  const projectsData = [
+   
+    {
+      id: 2,
+      title: "전문 문서 번역 영문화",
+      subtitle:"(LLM Engineering)",
+      description: "국가건설기준 용어와 원본 문서의 디자인, 포맷팅을 유지하여 영문으로 번역하는 프로젝트 파이프라인 구축 및 R&D 연구 담당 진행 중",
+      image: "/images/projects/2.png",
+      tag: ["All", "LLM"],
+      gitUrl: "/",
+      previewUrl: "/",
+    },
+    {
+      id: 3,
+      title: "RAG Chat Bot",
+      subtitle:"(LLM Engineering)",
+
+      description: "Retrieval Augmented Generation Chatbot를 구현 하여, 자연어 생성과 검색을 통합하여 사용자에게 정확하고 유용한 정보를 제공하는 프로젝트 RAG Research and Engineering 전담 구현",
+      image: "/images/projects/3.png",
+      tag: ["All", "LLM"],
+      gitUrl: "/",
+      previewUrl: "/",
+    },
+    {
+      id: 4,
+      title: "Tivv",
+      subtitle:"(FullStack SSR)",
+
+      description: "사용자가 입력한 프롬프트에 따라서 이미지를 자동으로 생성하거나 특정 이미지를 여러 스타일로 자유롭게 편집하는 생성형AI 플랫폼",
+      image: "/images/projects/4.png",
+      tag: ["All", "Web"],
+      gitUrl: "/",
+      previewUrl: "/",
+    },
+    {
+      id: 6,
+      title: "NexLook",
+      subtitle:"(FullStack)",
+
+      description: "맥락정보 기반 CCTV로, 실시간 사건을 포착하여 분석하고, 맥락을 파악하여 범죄 예방에 기여하는 차세대 인공지능 CCTV",
+      image: "/images/projects/4.png",
+      tag: ["All", "Web"],
+      gitUrl: "/",
+      previewUrl: "/",
+    },
+    
+  
+  ];
+
+  const [tag, setTag] = useState("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const handleTagChange = (newTag: React.SetStateAction<string>) => {
+    setTag(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
     <>
-    <section className="space-y-16 bg-[url('/background.png')] bg-cover bg-center bg-no-repeat px-1 ">
-      <section className="grid grid-cols-1 items-center gap-8 sm:grid-cols-2">
+<section className="space-y-20 pt-[10rem] h-full px-[40px] bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/background.png')", backgroundSize: "90%" }}>
+    <section className="grid grid-cols-1 items-center gap-6 sm:grid-cols-2">
+    
         <div className="space-y-3">
-          <H1 className="text-center sm:text-start">안녕하세요! <br/> 권구민입니다 👋</H1>
-          <p className="text-center sm:text-start">
-          Anyone can do it if have the will to do it!
-
-          {/* 주니어 개발자로서 저는 새로운 기술과 트렌드를 배우고 적용하는 것을 즐깁니다!
-타 언어를 배우는데 거리낌이 없으며, 항상 성장을 위해 노력하고 있습니다!
-다양한 개발 프로젝트를 통해 실무적 경험을 쌓고 있으며, 현재는 LLM engineer에 대한 꿈을 꾸고 있습니다!
-온라인 커뮤니티를 통해 다른 개발자들과 지식을 공유하고 함께 성장하는 것에 큰 관심을 가지고 있습니다. */}
-          </p>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="col-span-8 text-center place-self-center  sm:text-left justify-center"
+        >
+            <h1 className=" font-extrabold  text-[40px] lg:leading-loose">
+            <span className=" bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+            안녕하세요!
+            </span>
+            <br></br>
+            <TypeAnimation
+              sequence={[
+                '권구민입니다👋',
+                1000,
+                'Want be',
+                1000,
+                'LLM Enginner',
+                1000,
+                'All Runder',
+                1000,
+                
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </h1>
+        </motion.div>
         </div>
         <div className="flex justify-center">
           <Image
@@ -46,13 +134,43 @@ export default function Home() {
   저에 대한 자세한 이력서 | 포트폴리오를 확인하고 싶다면?
   <a
     href="https://fuschia-humor-318.notion.site/baeafb8b2d1f49dea525dab32db51b08"
-    className="text-primary hover:underline"
+    className="text-primary underline"
     target='_blank'
   >
     여기를 클릭하여 이동하세요!
   </a>
 </p>
+</section>
+
+    <div className="flex flex-row justify-center items-center gap-2 pt-6 pb-4">
+          <ProjectTag onClick={handleTagChange} name="All" isSelected={tag === "All"} />
+          <ProjectTag onClick={handleTagChange} name="LLM" isSelected={tag === "LLM"} />
+          <ProjectTag onClick={handleTagChange} name="Web" isSelected={tag === "Web"} />
+        </div>
+    <section className=" grid grid-cols-1 items-center gap-6 sm:grid-cols-1 pb-[10rem]">
+      
+        <ul ref={ref} className="grid md:grid-cols-2 gap-8 md:gap-12">
+          {filteredProjects.map((project, index) => (
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.3, delay: index * 0.4 }}
+            >
+            <ProjectCard
+  key={project.id}
+  title={`${project.title} - CN.AI`}
+  subtitle={project.subtitle}
+  description={project.description}
+  imgUrl={project.image}
+  previewUrl={project.previewUrl}
+/>
+            </motion.li>
+          ))}
+        </ul>
       </section>
+          
     </section>
     </>
   );

@@ -41,14 +41,19 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
   return (
     <div
       className={cn(
-        "bottom-0 right-0 z-50 w-full max-w-[500px] p-1 xl:right-36",
+        "bottom-0 right-0 z-50 w-full max-w-[500px] p-1 ",
         open ? "fixed" : "hidden",
+        
       )}
+      style={{ zIndex: 999 }} 
     >
-      <button onClick={onClose} className="mb-1 ms-auto block">
+      
+      <div className="flex h-[600px] flex-col rounded border bg-background shadow-xl"
+            style={{ borderRadius: '1rem' }} 
+      >
+        <button onClick={onClose} className="mb-1 ms-auto block">
         <XCircle size={30} className="rounded-full bg-background" />
       </button>
-      <div className="flex h-[600px] flex-col rounded border bg-background shadow-xl">
         <div className="mt-3 h-full overflow-y-auto px-3" ref={scrollRef}>
           {messages.map((message) => (
             <ChatMessage message={message} key={message.id} />
@@ -107,7 +112,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
           <input
             value={input}
             onChange={handleInputChange}
-            placeholder="Say something..."
+            placeholder="AI 구민에게 질문을 입력하세요."
             className="grow rounded border bg-background px-3 py-2"
             ref={inputRef}
           />
