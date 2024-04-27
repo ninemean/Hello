@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
-import higoomin from "../assets/higoomin.png"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
   },
   description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
   openGraph: {
-    images: '../assets/higoomin.png',
+    url: 'https://cdn.discordapp.com/attachments/1222405100346150945/1233773021479698432/higoomin.png?ex=662e502a&is=662cfeaa&hm=bd8154d7e030bc4201a5782554c202adc61bfe1668690a811705814b754610ae&',
   },
 };
 export default function RootLayout({
