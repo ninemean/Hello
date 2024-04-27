@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
   openGraph: {
-    url: 'https://cdn.discordapp.com/attachments/1222405100346150945/1233773021479698432/higoomin.png?ex=662e502a&is=662cfeaa&hm=bd8154d7e030bc4201a5782554c202adc61bfe1668690a811705814b754610ae&',
+    url: 'https://www.aigoomin.shop',
   },
 };
 export default function RootLayout({
