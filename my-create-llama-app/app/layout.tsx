@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   // metadataBase: new URL('www.aigoomin.shop'),
   metadataBase: new URL('https://www.aigoomin.shop'),
   title: {
-    template: "%s | 안녕하세요! 권구민입니다 👋",
+    template: "안녕하세요! 권구민입니다 👋",
     default: "안녕하세요! 권구민입니다 👋",
   },
   description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
