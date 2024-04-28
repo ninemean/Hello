@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react"
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -46,6 +48,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class">
           <Navbar />
           <SpeedInsights />
+          <Analytics />
           <main className="flex justify-center items-center h-screen">
             <div className="w-[48.125rem] h-full">{children}</div>
           </main>
