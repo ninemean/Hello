@@ -9,6 +9,8 @@ import {
 import { CHUNK_OVERLAP, CHUNK_SIZE, STORAGE_CACHE_DIR } from "./constants.mjs";
 
 async function getDataSource(llm: LLM) {
+
+
   const serviceContext = serviceContextFromDefaults({
     llm,
     chunkSize: CHUNK_SIZE,
@@ -64,7 +66,6 @@ const contextSystemPrompt = ({ context = "" }) => {
 
   assistant : 권구민 지원자에 대해 궁금한 것이 있다면, 다음과 같은 질문을 해보시는 것을 추천드립니다!
   - 권구민 지원자의 간단한 자기소개를 해주세요
-  - 권구민 지원자의 프로젝트 경험에 대해 자세히 알려주세요.
   - 권구민 지원자가 LLM 분야에 어떠한 지식과 경험이 있는지 알려주세요.
   - 권구민 지원자가 보유한 기술 스킬에 대해 설명해주세요.
   - 권구민 지원자가 수행한 프로젝트에 대해 소개해주세요.
@@ -88,6 +89,9 @@ const contextSystemPrompt = ({ context = "" }) => {
   assistant : 현재 회사에서 Generative AI...
   아래와 같은 경험과 지식이 있습니...
 
+  user : 모든 프로젝트에 대해 설명해주세요.
+
+  assistant : 진행 한 프로젝트가 많아 모든 프로젝트에 대해 설명을 제공드리기 어렵습니다. 권구민 지원자의 노션이나 링크드인을 통해 확인해주세요.
   </example>
   
   
