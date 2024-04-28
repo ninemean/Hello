@@ -9,12 +9,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.aigoomin.shop"), 
 
   title: {
     template: "안녕하세요! 권구민입니다 👋",
     default: "안녕하세요! 권구민입니다 👋",
   },
+
   description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
+
   openGraph: {
     type: "website",
     url: "https://www.aigoomin.shop",
@@ -22,9 +25,13 @@ export const metadata: Metadata = {
     description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
     siteName: "안녕하세요! 권구민입니다 👋",
     images: [{
-      url: "https://hellogoomin-537atacg8-ninemeans-projects.vercel.app/opengraph-image.png",
+      url: "https://www.aigoomin.shop/opengraph-image.png",
     }],
   },
+
+  twitter: {
+    images: ["https://www.aigoomin.shop/opengraph-image.png"]
+  }
 };
 
 export default function RootLayout({
