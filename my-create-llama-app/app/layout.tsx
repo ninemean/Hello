@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
   openGraph: {
-    url: 'https://i.imgur.com/L3S6CNR.pn',
+    url: 'https://i.imgur.com/L3S6CNR.png',
   },
 
  twitter: {
