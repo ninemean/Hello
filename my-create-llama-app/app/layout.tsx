@@ -16,7 +16,14 @@ export const metadata: Metadata = {
   },
   description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
   openGraph: {
-    images: ['./opengraph-image.png'],
+    type: "website",
+    url: "https://www.aigoomin.shop",
+    title: "안녕하세요! 권구민입니다 👋",
+    description: "AI구민에게 권구민 지원자에 대해 뭐든지 질문해보세요!",
+    siteName: "안녕하세요! 권구민입니다 👋",
+    images: [{
+      url: "https://www.aigoomin.shop/opengraph-image.png",
+    }],
   },
 };
 
