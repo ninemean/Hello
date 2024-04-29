@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     const llm = new OpenAI({
       model: "gpt-3.5-turbo",
       maxTokens: 4096,
-      temperature: 0
+      temperature: 0,
     });
 
    
