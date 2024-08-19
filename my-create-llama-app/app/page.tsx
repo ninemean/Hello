@@ -133,7 +133,7 @@ export default function Home() {
 <p>
   저에 대한 자세한 이력서 | 포트폴리오를 확인하고 싶다면?
   <a
-    href="https://fuschia-humor-318.notion.site/baeafb8b2d1f49dea525dab32db51b08"
+    href="https://o3oninemean.notion.site/baeafb8b2d1f49dea525dab32db51b08"
     className="text-primary underline"
     target='_blank'
   >

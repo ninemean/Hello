@@ -89,7 +89,7 @@ export default function AIChatBox({ open, onClose }: AIChatBoxProps) {
     <p className="text-sm text-muted-foreground">
       권구민 지원자에 대한 자세한 이력서 및 포트폴리오를 확인하고 싶다면?{" "}
       <a
-        href="https://fuschia-humor-318.notion.site/baeafb8b2d1f49dea525dab32db51b08"
+        href="https://o3oninemean.notion.site/baeafb8b2d1f49dea525dab32db51b08"
         className="text-primary hover:underline"
         target='_blank'
         rel="noopener noreferrer"
